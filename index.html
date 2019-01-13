@@ -1,8 +1,12 @@
 <script>
   
-  
+var options = {
+    headers: {
+        "MyField" : "MyField"
+    }
+};
 
-var exampleSocket = new WebSocket("ws://127.0.0.1:8080/", "123456789");
+var exampleSocket = new WebSocket("ws://127.0.0.1:8080/", options);
   exampleSocket.onopen = function() {
     console.log(exampleSocket.readyState);
     exampleSocket.send("Here's some text that the server is urgently awaiting!");
